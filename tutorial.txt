@@ -1,0 +1,1 @@
+Vào tắt chứng chỉ SSL trong postman

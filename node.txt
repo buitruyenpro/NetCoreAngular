@@ -15,3 +15,10 @@ dotnet dev-certs https -t
 Kiểm tra thông tin: dotnet --info
 Microsoft.EntityFrameworkCore -> Microsoft.EntityFrameworkCore -> 3.1.1
 Microsoft.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Sqlite -> 3.1.1 ->restore ->dotnet restore
+
+Microsoft.EntityFrameworkCore.Design ->3.1.1
+
+=========================================================================================================dotnet tool install --global dotnet-ef --version 3.1.1
+dotnet ef -h
+dotnet ef migrations add InitialCreate -o Data/Migrations
+Microsoft.EntityFrameworkCore.Design -> 3.1.1
