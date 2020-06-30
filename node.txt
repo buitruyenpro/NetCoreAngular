@@ -1,0 +1,6 @@
+lệnh tạo dự án mới API: 
+dotnet new sln
+dotnet new webapi-o API
+dotnet sln -h
+dotnet sln add API
+============================================================================================================================= 
