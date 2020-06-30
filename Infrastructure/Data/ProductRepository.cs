@@ -14,14 +14,17 @@ namespace Infrastructure.Data
             _context = context;
         }
 
-        public Task<Product> GetProductByIdAsync(int id)
+
+        public async Task<Product> GetProductByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            return await _context.Products.FindAsync(id);
         }
 
-        public Task<IReadOnlyList<Product>> GetProductsAsync()
+        public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            throw new System.NotImplementedException();
+            return await _context.Products.ToListAsync();
         }
+
+
     }
 }
