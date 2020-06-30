@@ -26,5 +26,18 @@ dotnet ef migrations add InitialCreate -o Data/Migrations
 =========================================================================================================
 Tạo dữ liệu
 dotnet ef database update
-==========================================================================================================
+========================================================================================================
+Vào thư mục chính
+dotnet new classlib -o Core
+dotnet new classlib -o Infrastructure
+dotnet sln add Core
+dotnet sln add Infrastructure
+Vào API tham chiếu
+dotnet add reference ../Infrastructure/
+Vào Infrastructure
+dotnet add reference ../Core/
+Xong đó
+dotnet restore
+===========================================================================================================
+
 
