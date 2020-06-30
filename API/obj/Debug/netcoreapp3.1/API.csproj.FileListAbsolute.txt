@@ -54,3 +54,7 @@ C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Core.pdb
