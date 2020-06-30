@@ -18,6 +18,13 @@ Microsoft.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Sqlite -> 3.1.1 -
 
 Microsoft.EntityFrameworkCore.Design ->3.1.1
 
-=========================================================================================================dotnet tool install --global dotnet-ef --version 3.1.1
+=========================================================================================================
+Cấu hình dữ liệu
+dotnet tool install --global dotnet-ef --version 3.1.1
 dotnet ef -h
 dotnet ef migrations add InitialCreate -o Data/Migrations
+=========================================================================================================
+Tạo dữ liệu
+dotnet ef database update
+==========================================================================================================
+
