@@ -7,6 +7,7 @@ namespace Infrastructure.Data
 {
     public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
     {
+        // Mục đích trả về chuỗi truy vấn mà thôi
         public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery, ISpecification<TEntity> spec)
         {
             var query = inputQuery;
