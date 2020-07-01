@@ -38,6 +38,12 @@ Vào Infrastructure
 dotnet add reference ../Core/
 Xong đó
 dotnet restore
-===========================================================================================================
+=========================================================================================================
+xóa bảng csdl
+dotnet ef database drop -p Infrastructure -s API
+xóa migrations
+dotnet ef migrations remove -p Infrastructure -s API
+thêm migrations
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
 
 
