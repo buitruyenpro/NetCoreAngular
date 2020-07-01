@@ -18,6 +18,8 @@ Microsoft.EntityFrameworkCore -> Microsoft.EntityFrameworkCore.Sqlite -> 3.1.1 -
 
 Microsoft.EntityFrameworkCore.Design ->3.1.1
 
+Automapper.Extensions.Microsoft->Automapper.Extensions.Microsoft.Denpencyinjection->7.0.0
+
 =========================================================================================================
 Cấu hình dữ liệu
 dotnet tool install --global dotnet-ef --version 3.1.1
@@ -48,5 +50,4 @@ xóa migrations
 dotnet ef migrations remove -p Infrastructure -s API
 thêm migrations
 dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
-
 
