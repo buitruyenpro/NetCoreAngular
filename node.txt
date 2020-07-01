@@ -32,12 +32,15 @@ dotnet new classlib -o Core
 dotnet new classlib -o Infrastructure
 dotnet sln add Core
 dotnet sln add Infrastructure
-Vào API tham chiếu
+Vào Core tham chiếu
 dotnet add reference ../Infrastructure/
-Vào Infrastructure
+Vào Infrastructure tham chiếu
 dotnet add reference ../Core/
 Xong đó
 dotnet restore
+Xóa tham chiếu
+dotnet remove Core/Core.csproj reference Infrastructure/Infrastructure.csproj
+dotnet remove reference ..\ReferenceCheckLibrary\ReferenceCheckLibrary.csproj
 =========================================================================================================
 xóa bảng csdl
 dotnet ef database drop -p Infrastructure -s API
