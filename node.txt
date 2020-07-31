@@ -75,3 +75,6 @@ If you get a prompt, click “Yes”
 https://valor-software.com/ngx-bootstrap/#/documentation
 npm install ngx-bootstrap --save
 npm install font-awesome
+========================================================================================================== =================== 
+Tạo thành phần trong angular:
+ng g c nav-bar --skip-tests
