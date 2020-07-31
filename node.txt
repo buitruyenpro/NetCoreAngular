@@ -56,6 +56,6 @@ dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migratio
  Swashbuckle.AspNetCore.SwaggerUI
  ============================================================================================================================= 
 npm install -g @angular/cli
-ng new my-dream-app
+ng new my-dream-app ->sau đó chọn scss
 cd my-dream-app
 ng serve
