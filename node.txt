@@ -72,3 +72,6 @@ Click “Next”
 Click “Finish”
 If you get a prompt, click “Yes”
 ==========================================================================================================
+https://valor-software.com/ngx-bootstrap/#/documentation
+npm install ngx-bootstrap --save
+npm install font-awesome

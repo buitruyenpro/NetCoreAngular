@@ -24,7 +24,12 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/bootstrap/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -64,7 +69,7 @@
             "browserTarget": "client:build",
             "sslKey": "ssl/server.key",
             "sslCert": "ssl/server.crt",
-            "ssl":true
+            "ssl": true
           },
           "configurations": {
             "production": {
