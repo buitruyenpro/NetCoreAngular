@@ -88,3 +88,5 @@ Tạo dịch vụ
 ng g s shop  --skip-tests --flat
 tạo routing:
 ng g m shop-routing --flat
+tạo thành phần con: 
+ng g c nav-bar --skip-tests
