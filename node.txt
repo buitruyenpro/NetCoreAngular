@@ -78,3 +78,13 @@ npm install font-awesome
 ========================================================================================================== =================== 
 Tạo thành phần trong angular:
 ng g c nav-bar --skip-tests
+đi vào thư mục app gõ:
+ng g m core
+tương tự cho shop, shared
+
+đi vào thư mục shop:
+ng g c shop --flat  --skip-tests
+Tạo dịch vụ
+ng g s shop  --skip-tests --flat
+tạo routing:
+ng g m shop-routing --flat
