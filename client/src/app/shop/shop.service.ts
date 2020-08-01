@@ -9,6 +9,6 @@ export class ShopService {
   baseUrl = 'https://localhost:5001/api/';
   constructor(private http: HttpClient) {}
   getProducts() {
-    return this.http.get<IPagination>(this.baseUrl + 'products');
+    return this.http.get<IPagination>(this.baseUrl + 'products?pageSize=50');
   }
 }
