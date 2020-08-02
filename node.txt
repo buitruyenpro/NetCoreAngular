@@ -101,3 +101,4 @@ StackExchange.Redis
 https://chocolatey.org/packages/redis-64/
 choco install redis-64 --version 3.0.503
 run: redis-server
+off: redis-cli ->shutdown
