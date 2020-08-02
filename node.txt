@@ -102,3 +102,13 @@ https://chocolatey.org/packages/redis-64/
 choco install redis-64 --version 3.0.503
 run: redis-server
 off: redis-cli ->shutdown
+===============================================================================================
+Microsoft.AspNetCore.Identity ->2.2.0 cái này trong Infras
+Microsoft.AspNetCore.Identity.EntityFrameworkCore ->3.1.1 cái này trong Infras
+Microsoft.IdentityModel.Tokens ->5.6.0 cái này trong Infras
+System.IdentityModel.Tokens.Jwt ->5.6.0 cái này trong Infras
+Microsoft.AspNetCore.Authentication.JwtBearer->3.1.1 cái này trong API
+Microsoft.Extensions.Identity.Stores ->3.1.1 cái này trong Core
+===============================================================================================
+đổi netstandard2.0 -> netstandard2.1 trong Core
+đổi netstandard2.0 -> netstandard2.1 trong fras
