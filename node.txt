@@ -112,3 +112,5 @@ Microsoft.Extensions.Identity.Stores ->3.1.1 cái này trong Core
 ===============================================================================================
 đổi netstandard2.0 -> netstandard2.1 trong Core
 đổi netstandard2.0 -> netstandard2.1 trong fras
+============================================================================================================================= 
+dotnet ef migrations add IdentityInitial -p Infrastructure -s API -o Identity/Migrations -c AppIdentityDbContext
