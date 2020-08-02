@@ -26,6 +26,7 @@ export class BasketService {
       })
     );
   }
+  // Cái này làm để thêm vào mảng basketSource thôi, sau đó gửi đi
 
   setBasket(basket: IBasket) {
     return this.http.post(this.baseUrl + 'basket', basket).subscribe(
@@ -38,19 +39,28 @@ export class BasketService {
       }
     );
   }
-
+  // Cái này lấy giá trị trong mạng basketSource
   getCurrentBasketValue() {
     return this.basketSource.value;
   }
 
+  // Cái này dùng để thêm một đối tươợng vào mạng basketSource
   addItemToBasket(item: IProduct, quantity = 1) {
+    // Cái này dùng để ánh xạ, dữ liệu phù hợp trước khi gán giá trị cho itemToAdd kiểu dữ liệu là IBasketItem
     const itemToAdd: IBasketItem = this.mapProductItemToBasketItem(item, quantity);
     let basket = this.getCurrentBasketValue();
     if (basket === null) {
       basket = this.createBasket();
     }
+    // Cái này dùng để kiểm tra đối tượng có ở trong mạng hay chưa, nếu có thì tăng số lượng,
+    // nếu không có thì tạo đối tượng rồi trả về một đối tượng, sau đó thêm vào mạng IBasketItem
     basket.items = this.addOrUpdateItem(basket.items, itemToAdd, quantity);
     this.setBasket(basket);
+  }
+  private createBasket(): IBasket {
+    const basket = new Basket();
+    localStorage.setItem('basket_id', basket.id);
+    return basket;
   }
 
   private addOrUpdateItem(items: IBasketItem[], itemToAdd: IBasketItem, quantity: number): IBasketItem[] {
@@ -113,12 +123,6 @@ export class BasketService {
     const subtotal = basket.items.reduce((a, b) => b.price * b.quantity + a, 0);
     const total = subtotal + shipping;
     this.basketTotalSource.next({ shipping, total, subtotal });
-  }
-
-  private createBasket(): IBasket {
-    const basket = new Basket();
-    localStorage.setItem('basket_id', basket.id);
-    return basket;
   }
 
   private mapProductItemToBasketItem(item: IProduct, quantity: number): IBasketItem {

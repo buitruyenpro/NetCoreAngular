@@ -1,4 +1,4 @@
-import uuid from 'uuid/v4';
+import { v1 as uuid } from 'uuid';
 
 export interface IBasket {
   id: string;
