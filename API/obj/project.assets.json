@@ -2598,11 +2598,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\API.csproj",
+      "projectPath": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\API.csproj",
       "packagesPath": "C:\\Users\\BUI DUC TRUYEN\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\obj\\",
+      "outputPath": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2621,8 +2621,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

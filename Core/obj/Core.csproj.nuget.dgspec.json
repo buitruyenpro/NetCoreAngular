@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj": {}
+    "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj": {}
   },
   "projects": {
-    "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj": {
+    "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\BUI DUC TRUYEN\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\obj\\",
+        "outputPath": "C:\\Users\\BUI DUC TRUYEN\\Documents\\HocNetCoreVsAngular\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
