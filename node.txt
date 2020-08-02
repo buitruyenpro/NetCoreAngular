@@ -93,4 +93,5 @@ ng g c nav-bar --skip-tests
 ===================================================================================================
 npm install ngx-toastr --save
 npm install --save xng-breadcrumb
+> npm install bootswatch
 chú ý thêm thư viện này vào: import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
