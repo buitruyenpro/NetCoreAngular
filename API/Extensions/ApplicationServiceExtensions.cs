@@ -13,6 +13,7 @@ namespace API.Extensions
         {
 
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             // Đây là khi đầu vào input không hợp lệ
             services.Configure<ApiBehaviorOptions>(options =>
