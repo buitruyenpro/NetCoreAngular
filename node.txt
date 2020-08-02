@@ -92,4 +92,5 @@ tạo thành phần con:
 ng g c nav-bar --skip-tests
 ===================================================================================================
 npm install ngx-toastr --save
+npm install --save xng-breadcrumb
 chú ý thêm thư viện này vào: import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
