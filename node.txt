@@ -96,3 +96,5 @@ npm install --save xng-breadcrumb
 > npm install bootswatch
 npm install ngx-spinner
 chú ý thêm thư viện này vào: import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+============================================================================================================================= 
+StackExchange.Redis
