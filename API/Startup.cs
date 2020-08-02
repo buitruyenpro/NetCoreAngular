@@ -47,6 +47,7 @@ namespace API
 
             // Đây là khi đầu vào input không hợp lệ
             services.AddApplicationServices();
+            services.AddIdentityServices();
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
