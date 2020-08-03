@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Infrastructure.Services
 {
+    // Dùng để tạo mã thông báo xác thực cho người dùng
     public class TokenService : ITokenService
     {
         private readonly IConfiguration _config;
