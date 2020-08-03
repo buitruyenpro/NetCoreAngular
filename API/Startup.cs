@@ -47,7 +47,7 @@ namespace API
 
             // Đây là khi đầu vào input không hợp lệ
             services.AddApplicationServices();
-            services.AddIdentityServices();
+            services.AddIdentityServices(_config);
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
@@ -72,6 +72,7 @@ namespace API
             app.UseRouting();
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwaggerDocumention();
             app.UseEndpoints(endpoints =>
