@@ -2,6 +2,7 @@ using System.Linq;
 using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,28 +12,30 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
-            // Đây là khi đầu vào input không hợp lệ
             services.Configure<ApiBehaviorOptions>(options =>
-            {
-                options.InvalidModelStateResponseFactory = actionContext =>
-                {
-                    var errors = actionContext.ModelState
-                        .Where(e => e.Value.Errors.Count > 0)
-                        .SelectMany(x => x.Value.Errors)
-                        .Select(x => x.ErrorMessage).ToArray();
+{
+    options.InvalidModelStateResponseFactory = actionContext =>
+    {
+        var errors = actionContext.ModelState
+            .Where(e => e.Value.Errors.Count > 0)
+            .SelectMany(x => x.Value.Errors)
+            .Select(x => x.ErrorMessage).ToArray();
 
-                    var errorResponse = new ApiValidationErrorResponse
-                    {
-                        Errors = errors
-                    };
+        var errorResponse = new ApiValidationErrorResponse
+        {
+            Errors = errors
+        };
 
-                    return new BadRequestObjectResult(errorResponse);
-                };
-            });
+
+        return new BadRequestObjectResult(errorResponse);
+    };
+});
+
+
 
             return services;
         }
