@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class AccountService {
   baseUrl = environment.apiUrl;
+  // Tại vì khi sử dụng, BehaviorSubject nó ko lưu trạng thái trước đó ngay, còn ReplaySubject
+  // nó sẽ lưu ngày và nhớ thông tin trước, nó giống như một session để giữ giá trị
+  // https://viblo.asia/p/rxjava-subject-publish-replay-behavior-and-async-subject-E375zwYjKGW
   private currentUserSource = new ReplaySubject<IUser>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
