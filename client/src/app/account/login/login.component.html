@@ -14,7 +14,26 @@
           placeholder="Email address"
         />
         <label for="inputEmail">Email address</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            loginForm.get('email').invalid &&
+            loginForm.get('email').touched &&
+            loginForm.get('email').errors['required']
+          "
+          >Email Address is required</span
+        >
       </div>
+
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('email').invalid &&
+          loginForm.get('email').touched &&
+          loginForm.get('email').errors['pattern']
+        "
+        >Email Address is not valid
+      </span>
 
       <div class="form-label-group">
         <input
@@ -25,8 +44,19 @@
           placeholder="Password"
         />
         <label for="inputPassword">Password</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            loginForm.get('password').invalid &&
+            loginForm.get('password').touched &&
+            loginForm.get('password').errors['required']
+          "
+          >Password is required</span
+        >
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+      </button>
     </form>
   </div>
 </div>
