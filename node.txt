@@ -49,6 +49,7 @@ dotnet ef database drop -p Infrastructure -s API
 xóa migrations
 dotnet ef migrations remove -p Infrastructure -s API
 thêm migrations
+- p là thư mục mình chọn, -s là bỏ qua thư mục API, -o đầu ra thư mục dữ liệu
 dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
 
 =========================================================================================================
