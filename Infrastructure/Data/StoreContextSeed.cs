@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Data
@@ -16,8 +16,6 @@ namespace Infrastructure.Data
         {
             try
             {
-                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
                 if (!context.ProductBrands.Any())
                 {
                     var brandsData =
@@ -63,7 +61,20 @@ namespace Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
+                if (!context.DeliveryMethods.Any())
+                {
+                    var dmData =
+                        File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
 
+                    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
+
+                    foreach (var item in methods)
+                    {
+                        context.DeliveryMethods.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {

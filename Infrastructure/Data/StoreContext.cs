@@ -1,8 +1,9 @@
+using System;
+using System.Linq;
 using System.Reflection;
 using Core.Entities;
-using System.Linq;
+using Core.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
-using System;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Data
@@ -11,14 +12,17 @@ namespace Infrastructure.Data
     {
         public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
-
         }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Cấu hình sự di chuyển, như các ràng buộc đầu vào của thuộc tính
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
@@ -27,7 +31,8 @@ namespace Infrastructure.Data
                 foreach (var entityType in modelBuilder.Model.GetEntityTypes())
                 {
                     var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
-                    var dateTimeProperties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(DateTimeOffset));
+                    var dateTimeProperties = entityType.ClrType.GetProperties()
+                        .Where(p => p.PropertyType == typeof(DateTimeOffset));
 
                     foreach (var property in properties)
                     {
