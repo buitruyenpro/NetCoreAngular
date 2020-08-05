@@ -1,0 +1,29 @@
+OrderItem nó cần:
+   ProductItemOrdered
+        ProductItemId
+        ProductName
+        PictureUrl
+    price
+    Quantity
+
+Order nó cần:
+    ProductItemOrdered
+        ProductItemId
+        ProductName
+        PictureUrl
+    price
+    Quantity    
+    -------------
+    buyerEmail
+    shipToAddress
+    deliveryMethod
+    orderItems
+    subtotal
+    ------------
+    OrderDate
+    Status
+    PaymentIntentId
+    
+
+
+
