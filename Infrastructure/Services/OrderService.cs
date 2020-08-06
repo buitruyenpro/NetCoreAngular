@@ -44,7 +44,6 @@ namespace Infrastructure.Services
             _unitOfWork.Repository<Order>().Add(order);
 
             // save to db
-            // Nếu điều này không thanh công thì mọi thứ trên sẽ không có ý nghĩa gì cả
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
@@ -61,14 +60,18 @@ namespace Infrastructure.Services
             return await _unitOfWork.Repository<DeliveryMethod>().ListAllAsync();
         }
 
-        public Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
+        public async Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
         {
-            throw new System.NotImplementedException();
+            var spec = new OrdersWithItemsAndOrderingSpecification(id, buyerEmail);
+
+            return await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
         }
 
-        public Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
+        public async Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
-            throw new System.NotImplementedException();
+            var spec = new OrdersWithItemsAndOrderingSpecification(buyerEmail);
+
+            return await _unitOfWork.Repository<Order>().ListAsync(spec);
         }
     }
 }
