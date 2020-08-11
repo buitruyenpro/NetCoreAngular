@@ -120,3 +120,4 @@ làm sạch dự án: dotnet clean
 http://www.jsontots.com/
 https://github.com/trycatchlearn/skinet
 https://localhost:5001/swagger/index.html
+============================================================================================================================= 
