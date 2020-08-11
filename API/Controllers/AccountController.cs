@@ -58,6 +58,8 @@ namespace API.Controllers
 
         [Authorize]
         [HttpPut("address")]
+        // cái này trong trường hợp mình muốn lấy bao nhiêu dữ liệu từ người dùng mà thôi, không thi
+        // người dùng người ta lại thêm một thuộc tính nào khác thì không tốt
         public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto address)
         {
             var user = await _userManager.FindByUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
