@@ -129,3 +129,7 @@ lại ba thành phân tên phải giống nhau
 ============================================================================================================================= 
 Đưa checkoutForm để lấy giá trị thôi, với checkoutForm để nó thực hiện form, để nó liên kết
 kiểm tra tính hợp lệ trong trường
+Dầu tiên: tạo mô đun ng g m orders
+Sau đó cd vào folder orders tạo: ng g m orders-routing --flat
+Sau đó tạo component: ng g c orders --flat --skip-tests
+Sau đó tạo service : ng g s orders --flat --skip-tests
