@@ -47,8 +47,7 @@ namespace Infrastructure.Services
 
             if (existingOrder != null)
             {
-                _unitOfWork.Repository<Order>().Delete(existingOrder);
-                // Cái này tạo một đơn đặt hàng trên trang web stripe mới thôi
+                // _unitOfWork.Repository<Order>().Delete(existingOrder);
                 await _paymentService.CreateOrUpdatePaymentIntent(basket.Id);
             }
 
