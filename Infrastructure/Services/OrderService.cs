@@ -12,8 +12,10 @@ namespace Infrastructure.Services
     {
         private readonly IBasketRepository _basketRepo;
         private readonly IUnitOfWork _unitOfWork;
-        public OrderService(IBasketRepository basketRepo, IUnitOfWork unitOfWork)
+        private readonly IPaymentService _paymentService;
+        public OrderService(IBasketRepository basketRepo, IUnitOfWork unitOfWork, IPaymentService paymentService)
         {
+            _paymentService = paymentService;
             _unitOfWork = unitOfWork;
             _basketRepo = basketRepo;
         }
@@ -39,17 +41,25 @@ namespace Infrastructure.Services
             // calc subtotal
             var subtotal = items.Sum(item => item.Price * item.Quantity);
 
+            // check to see if order exists
+            var spec = new OrderByPaymentIntentIdSpecification(basket.PaymentIntentId);
+            var existingOrder = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+
+            if (existingOrder != null)
+            {
+                _unitOfWork.Repository<Order>().Delete(existingOrder);
+                // Cái này tạo một đơn đặt hàng trên trang web stripe mới thôi
+                await _paymentService.CreateOrUpdatePaymentIntent(basket.Id);
+            }
+
             // create order
-            var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal);
+            var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, basket.PaymentIntentId);
             _unitOfWork.Repository<Order>().Add(order);
 
             // save to db
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
-
-            // delete basket
-            await _basketRepo.DeleteBasketAsync(basketId);
 
             // return order
             return order;
