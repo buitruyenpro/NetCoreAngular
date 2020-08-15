@@ -43,6 +43,7 @@ namespace Infrastructure.Services
             foreach (var item in basket.Items)
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
+                // Chú ý phần này vì mình không cho cập nhật giá trong updateBasket
                 if (item.Price != productItem.Price)
                 {
                     item.Price = productItem.Price;
