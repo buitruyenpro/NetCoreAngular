@@ -134,3 +134,5 @@ Sau đó cd vào folder orders tạo: ng g m orders-routing --flat
 Sau đó tạo component: ng g c orders --flat --skip-tests
 Sau đó tạo service : ng g s orders --flat --skip-tests
 ============================================================================================================================= 
+Stripe.net
+dotnet restore
