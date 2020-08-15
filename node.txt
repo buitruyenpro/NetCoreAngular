@@ -137,3 +137,4 @@ Sau đó tạo service : ng g s orders --flat --skip-tests
 Stripe.net
 dotnet restore
 Chú ý không thể cập nhật giá trong basket chỉ cập nhật số lượng thôi
+====== ======================================================================================================================= 
