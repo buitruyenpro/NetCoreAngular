@@ -144,3 +144,4 @@ Một điều cần nghi nhớ là: khi người dùng thanh toán quá nhiều 
 kiếm các đặt hàng giá trị giao dịch và xóa nó đi, sau đó mình tạo một đặt hàng online mới
 sau đó mình tạo một đơn đặt hàng mới
 Nên nhớ khi chưa thanh toán thành công thì basket bên client chưa xóa nên giỏ hàng vẫn tồn tại
+============================================================================================================================= 

@@ -47,7 +47,7 @@ namespace Infrastructure.Services
 
             if (existingOrder != null)
             {
-                // _unitOfWork.Repository<Order>().Delete(existingOrder);
+                _unitOfWork.Repository<Order>().Delete(existingOrder);
                 await _paymentService.CreateOrUpdatePaymentIntent(basket.Id);
             }
 
