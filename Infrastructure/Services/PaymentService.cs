@@ -24,6 +24,7 @@ namespace Infrastructure.Services
             _basketRepository = basketRepository;
             _unitOfWork = unitOfWork;
         }
+
         public async Task<CustomerBasket> CreateOrUpdatePaymentIntent(string basketId)
         {
             StripeConfiguration.ApiKey = _config["StripeSettings:SecretKey"];
@@ -40,10 +41,10 @@ namespace Infrastructure.Services
                     .GetByIdAsync((int)basket.DeliveryMethodId);
                 shippingPrice = deliveryMethod.Price;
             }
+
             foreach (var item in basket.Items)
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
-                // Chú ý phần này vì mình không cho cập nhật giá trong updateBasket
                 if (item.Price != productItem.Price)
                 {
                     item.Price = productItem.Price;
@@ -78,18 +79,34 @@ namespace Infrastructure.Services
             await _basketRepository.UpdateBasketAsync(basket);
 
             return basket;
-
-
         }
 
-        public Task<Order> UpdateOrderPaymentFailed(string paymentIntentId)
+        public async Task<Order> UpdateOrderPaymentFailed(string paymentIntentId)
         {
-            throw new System.NotImplementedException();
+            var spec = new OrderByPaymentIntentIdSpecification(paymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+
+            if (order == null) return null;
+
+            order.Status = OrderStatus.PaymentFailed;
+            await _unitOfWork.Complete();
+
+            return order;
         }
 
-        public Task<Order> UpdateOrderPaymentSucceeded(string paymentIntentId)
+        public async Task<Order> UpdateOrderPaymentSucceeded(string paymentIntentId)
         {
-            throw new System.NotImplementedException();
+            var spec = new OrderByPaymentIntentIdSpecification(paymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+
+            if (order == null) return null;
+
+            order.Status = OrderStatus.PaymentRecevied;
+            _unitOfWork.Repository<Order>().Update(order);
+
+            await _unitOfWork.Complete();
+
+            return order;
         }
     }
 }
