@@ -1,4 +1,3 @@
-<!-- Ở đây kiểm tra dữ liệu đã bị chỉnh sửa hay chưa và kiểm tra dữ liệu form hợp lễ hay không -->
 <div class="mt-4" [formGroup]="checkoutForm">
   <div class="d-flex justify-content-between align-items-center">
     <h4>Shipping address</h4>
@@ -36,7 +35,7 @@
   <button class="btn btn-outline-primary" routerLink="/basket">
     <i class="fa fa-angle-left"></i> Back to Basket
   </button>
-  <button class="btn btn-primary" cdkStepperNext>
+  <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-primary" cdkStepperNext>
     Go to Delivery <i class="fa fa-angle-right"></i>
   </button>
 </div>
