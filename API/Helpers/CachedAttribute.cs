@@ -22,10 +22,10 @@ namespace API.Helpers
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             var cacheService = context.HttpContext.RequestServices.GetRequiredService<IResponseCacheService>();
-
+            // Ở đây là tạo khóa redis dựa vào đường dẫn
             var cacheKey = GenerateCacheKeyFromRequest(context.HttpContext.Request);
             var cachedResponse = await cacheService.GetCachedResponseAsync(cacheKey);
-
+            // Ở đây nếu có thì nó sẽ phản lại cho khách hàng nếu cachedResponse trong redis là tồn tại
             if (!string.IsNullOrEmpty(cachedResponse))
             {
                 var contentResult = new ContentResult
@@ -42,7 +42,7 @@ namespace API.Helpers
             var executedContext = await next(); // move to controller
             // Nếu mình có phản hồi từ csdl thì mình lưu vào cache
             if (executedContext.Result is OkObjectResult okObjectResult)
-            {
+            {   //Lưu vào redis
                 await cacheService.CacheResponseAsync(cacheKey, okObjectResult.Value, TimeSpan.FromSeconds(_timeToLiveSeconds));
             }
         }
