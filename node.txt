@@ -133,20 +133,24 @@ Dầu tiên: tạo mô đun ng g m orders
 Sau đó cd vào folder orders tạo: ng g m orders-routing --flat
 Sau đó tạo component: ng g c orders --flat --skip-tests
 Sau đó tạo service : ng g s orders --flat --skip-tests
-============================================================================================================================= 
+=======================================================================================================
 Stripe.net
 dotnet restore
 Chú ý không thể cập nhật giá trong basket chỉ cập nhật số lượng thôi
-====== ======================================================================================================================= 
+=======================================================================================================
 Đầu tiên mình tạo một đơn đặt hàng online có giá trị tiền là báo nhiêu
 Sau đó mình sẽ thanh toán: nếu thành toán hợp lệ thì trạng thái nó sẽ là success
 Một điều cần nghi nhớ là: khi người dùng thanh toán quá nhiều lần thì mình tìm
 kiếm các đặt hàng giá trị giao dịch và xóa nó đi, sau đó mình tạo một đặt hàng online mới
 sau đó mình tạo một đơn đặt hàng mới
 Nên nhớ khi chưa thanh toán thành công thì basket bên client chưa xóa nên giỏ hàng vẫn tồn tại
-============================================================================================================================= 
+=======================================================================================================
 mysql -u root -p
 CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'truyen95@';
 GRANT ALL PRIVILEGES ON *.* TO 'appuserskinet'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-Pomelo.EntityFrameworkCore.Mysql
+Pomelo.EntityFrameworkCore.Mysql ->Infrastructure
+=======================================================================================================
+$Env:ASPNETCORE_ENVIRONMENT = "Production"
+dotnet ef migrations add "MySQL Initial" -p Infrastructure -s API -c StoreContext -o Data/Migrations
+dotnet ef migrations add "MySQL Indentity Initial" -p Infrastructure -s API -c AppIdentityDbContext -o Identity/Migrations
