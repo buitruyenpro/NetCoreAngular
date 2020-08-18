@@ -145,3 +145,7 @@ kiếm các đặt hàng giá trị giao dịch và xóa nó đi, sau đó mình
 sau đó mình tạo một đơn đặt hàng mới
 Nên nhớ khi chưa thanh toán thành công thì basket bên client chưa xóa nên giỏ hàng vẫn tồn tại
 ============================================================================================================================= 
+mysql -u root -p
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'truyen95@';
+GRANT ALL PRIVILEGES ON *.* TO 'appuserskinet'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
