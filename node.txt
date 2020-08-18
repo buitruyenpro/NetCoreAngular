@@ -154,3 +154,5 @@ Pomelo.EntityFrameworkCore.Mysql ->Infrastructure
 $Env:ASPNETCORE_ENVIRONMENT = "Production"
 dotnet ef migrations add "MySQL Initial" -p Infrastructure -s API -c StoreContext -o Data/Migrations
 dotnet ef migrations add "MySQL Indentity Initial" -p Infrastructure -s API -c AppIdentityDbContext -o Identity/Migrations
+=======================================================================================================
+dotnet publish -c Release -o publish skinet.sln

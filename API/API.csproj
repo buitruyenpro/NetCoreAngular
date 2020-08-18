@@ -10,6 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1"/>
   </ItemGroup>
   <ItemGroup>
+  <!-- Sử dụng content đối với những đối tượng không tương tác csdl -->
+    <Content Include="Content\**" CopyToPublishDirectory="PreserveNewest" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
   </ItemGroup>
 </Project>

@@ -91,3 +91,7 @@ C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Data\SeedData\brands.json
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Data\SeedData\delivery.json
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Data\SeedData\products.json
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Data\SeedData\types.json
