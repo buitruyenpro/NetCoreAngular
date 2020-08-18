@@ -149,3 +149,4 @@ mysql -u root -p
 CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'truyen95@';
 GRANT ALL PRIVILEGES ON *.* TO 'appuserskinet'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+Pomelo.EntityFrameworkCore.Mysql

@@ -88,3 +88,6 @@ C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.1\API.dll
 C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\obj\Debug\netcoreapp3.1\API.pdb
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\BUI DUC TRUYEN\Documents\HocNetCoreVsAngular\API\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
